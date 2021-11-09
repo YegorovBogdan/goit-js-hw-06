@@ -12,3 +12,13 @@ const images = [
     alt: 'Group of Horses Running',
   },
 ];
+
+const takeUl = document.querySelector('ul.gallery');
+takeUl.style.listStyle = 'None';
+
+const addLi = images.map(({ url, alt }) => `<li class="gallery__item"><img class="gallery__img" width="400" height="200" src="${url}" alt="${alt}"></li>`).join("");
+
+takeUl.insertAdjacentHTML("beforeEnd", addLi);
+
+takeUl.style.display = 'flex';
+takeUl.style.justifyContent = "space-evenly";
